@@ -1,0 +1,6 @@
+# Set the default behavior to LF for all files
+* text=auto
+
+# Explicitly specify files that should have CRLF endings
+*.bat text eol=crlf
+*.sh text eol=lf
