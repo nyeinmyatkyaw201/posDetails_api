@@ -377,7 +377,7 @@ function validateBulkData(data) {
   data.forEach((row) => {
     if (typeof row.item !== "string" || row.item == null) {
       validatedData.success = false;
-      validatedData.message = `Invalid item. Must be a string or cannot be null.`;
+      validatedData.message = `Invalid item. Must be a string.Please Enter Item`;
       return; // Exit early
     }
 
@@ -391,13 +391,13 @@ function validateBulkData(data) {
 
     if (row.price == null || typeof row.price !== "number") {
       validatedData.success = false;
-      validatedData.message = `Invalid price. Must be a number or price cannot be null.`;
+      validatedData.message = `Invalid price. Must be a number or price.Please Enter Price`;
       return; // Exit early
     }
 
     if (typeof row.quantity !== "number" || row.quantity == null) {
       validatedData.success = false;
-      validatedData.message = `Invalid quantity. Must be a number or quantity cannot be null.`;
+      validatedData.message = `Invalid quantity. Must be a number or quantity.Please Enter Quantity`;
       return; // Exit early
     }
 
@@ -412,7 +412,7 @@ function validateBulkData(data) {
 
     if (row.rechange == null || typeof row.rechange !== "boolean") {
       validatedData.success = false;
-      validatedData.message = `Invalid rechange. Must be a boolean or rechange cannot be null.`;
+      validatedData.message = `Invalid rechange. Must be a boolean.`;
       return; // Exit early
     }
 
@@ -440,7 +440,7 @@ async function validatePosformDataForCreate(data) {
   // Validate order_id is a number
   if (typeof order_id !== "number" || order_id == null) {
     validation.success = false;
-    validation.message = "Invalid order_id. Must be a number.Cannot be null";
+    validation.message = "Invalid order_id. Must be a number.Please Enter Order Id";
     return validation;
   }
 
@@ -455,14 +455,14 @@ async function validatePosformDataForCreate(data) {
   // Validate counter_no is an integer
   if (typeof counter_no !== "number" || !Number.isInteger(counter_no) || counter_no == null) {
     validation.success = false;
-    validation.message = "Invalid counter_no. Must be an integer.Cannot Be Null";
+    validation.message = "Invalid counter_no. Must be an integer.Please Enter Counter Number";
     return validation;
   }
   console.log(typeof casher_name,">>>>>>>>>>>")
   // Validate casher_name is a string
   if ( typeof casher_name !== 'string'|| casher_name == null ||  /^\d+$/.test(casher_name.trim())) {
     validation.success = false;
-    validation.message = "Invalid casher_name. Must be a string. Cannot be null.";
+    validation.message = "Invalid casher_name. Must be a string. Please Enter Casher Name.";
     return validation;
   }
   // Validate discount_percentage is a number not greater than 100
